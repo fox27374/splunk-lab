@@ -1,8 +1,10 @@
 ---
-- name: Add the user
+- name: Add the splunk user
   ansible.builtin.user:
-    name: "{{ linux_user }}"
-    password: "{{ linux_pw | password_hash('sha512') }}"
+    name: "{{ splunk_user }}"
+    home: "{{ splunk_home }}"
+    password: "{{ splunk_pw | password_hash('sha512') }}"
     shell: /bin/bash
-    comment: Student
+    uid: 10777
+    comment: Splunk User
     update_password: on_create
