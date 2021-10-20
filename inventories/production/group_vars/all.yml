@@ -1,6 +1,6 @@
 ---
 ansible_user: ansible
-ansible_become_pass: '{{ ansible_su_pass }}'
+ansible_become_pass: '{{ ansible_su_pw }}'
 ansible_ssh_private_key_file: ~/.ssh/ansible.key
 splunk_setup_file: splunk-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz
 splunk_home: /opt/splunk

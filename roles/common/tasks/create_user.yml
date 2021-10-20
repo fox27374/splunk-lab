@@ -3,7 +3,7 @@
   ansible.builtin.user:
     name: "{{ splunk_user }}"
     home: "{{ splunk_home }}"
-    password: "{{ splunk_pw | password_hash('sha512') }}"
+    password: "{{ splunk_user_pw | password_hash('sha512') }}"
     shell: /bin/bash
     uid: 10777
     comment: Splunk User
