@@ -1,0 +1,10 @@
+- hosts:
+    - students
+  roles:
+    - ../roles/common
+  serial: 50
+  vars_files:
+    - passwd.yml
+  vars:
+    - deployment_task: copy_file.yml
+  become: yes
