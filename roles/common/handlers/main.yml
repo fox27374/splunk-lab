@@ -1,0 +1,17 @@
+---
+- name: reload systemctl daemon
+  systemd:
+    daemon_reload: true
+  become: true
+
+- name: stop splunk
+  ansible.builtin.systemd:
+    state: stopped
+    name: Splunkd.service
+  become: true
+
+- name: start splunk
+  ansible.builtin.systemd:
+    state: started
+    name: Splunkd.service
+  become: true

@@ -1,0 +1,6 @@
+---
+- replace:
+    path: /etc/systemd/system/Splunkd.service
+    regexp: '^ExecStartPost'
+    replace: '# ExecStartPost'
+  become: true

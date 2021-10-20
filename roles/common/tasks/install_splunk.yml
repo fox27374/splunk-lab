@@ -13,11 +13,21 @@
     dest: "{{ splunk_install_path }}"
     remote_src: yes
   become: true
-  #notify:
-  #  - start splunk
 
-- name: Delete splunk setup file
-  include_tasks: delete_file.yml
+#- name: Delete splunk setup file
+#  include_tasks: delete_file.yml
 
 - name: Create splunk user
   include_tasks: create_user.yml
+
+- name: Check if unit file exists
+  ansible.builtin.stat:
+    path: /etc/systemd/system/Splunkd.service
+  register: unit
+
+- name: Enable systemd boot start
+  include_tasks: enable_boot.yml
+  when: unit.stat.exists == false
+
+- name: Comment lines in unit file
+  include_tasks: replace_in_file.yml
