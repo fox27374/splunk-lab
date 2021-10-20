@@ -1,0 +1,23 @@
+---
+- name: Copy splunk setup file
+  ansible.builtin.copy:
+    src: "../files/{{ splunk_file }}"
+    dest: /opt/
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: "Unarchive splunk package to {{ splunk_home }}"
+  unarchive:
+    src: "{{ splunk_package_path }}/{{ splunk_file }}"
+    dest: "{{ splunk_install_path }}"
+    remote_src: yes
+  become: true
+  #notify:
+  #  - start splunk
+
+- name: Delete splunk setup file
+  include_tasks: delete_file.yml
+
+- name: Create splunk user
+  include_tasks: create_user.yml

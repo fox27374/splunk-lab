@@ -3,9 +3,20 @@ all:
     ansible_python_interpreter: /usr/bin/python3
   children:
     sh:
+    # Searchhead
       hosts:
         spl-sh2.ntslab.loc:
 
-    mc:
+    master:
+    # Deployment, Monitoring, Licensing
       hosts:
-        spl-mc.ntslab.loc:
+        spl-master.ntslab.loc:
+
+    cm:
+    # Clustermaster
+      hosts:
+        spl-cm.ntslab.loc:
+
+    idx:
+    # Indexer
+      hosts:

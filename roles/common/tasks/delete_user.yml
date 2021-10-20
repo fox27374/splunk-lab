@@ -1,6 +1,6 @@
 ---
 - name: Remove the user
   ansible.builtin.user:
-    name: "{{ linux_user }}"
+    name: "{{ splunk_nix_user }}"
     state: absent
     remove: yes

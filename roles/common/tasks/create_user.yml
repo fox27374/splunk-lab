@@ -1,7 +1,7 @@
 ---
 - name: Add the splunk user
   ansible.builtin.user:
-    name: "{{ splunk_user }}"
+    name: "{{ splunk_nix_user }}"
     home: "{{ splunk_home }}"
     password: "{{ splunk_user_pw | password_hash('sha512') }}"
     shell: /bin/bash

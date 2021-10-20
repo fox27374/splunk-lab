@@ -1,0 +1,4 @@
+- name: Remove file
+  ansible.builtin.file:
+    path: "{{ splunk_package_path }}/{{ splunk_file }}"
+    state: absent

@@ -1,11 +1,20 @@
 ---
+# Ansible variables
 ansible_user: ansible
 ansible_become_pass: '{{ ansible_su_pw }}'
 ansible_ssh_private_key_file: ~/.ssh/ansible.key
-splunk_setup_file: splunk-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz
+
+# Splunk variables
+splunk_file: splunk-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz
+splunk_package_path: /opt
+splunk_install_path: /opt
 splunk_home: /opt/splunk
-splunk_linux_user: splunk
+splunk_nix_user: splunk
+splunk_nix_group: splunk
 splunk_linux_user_uid: 10777
+splunk_linux_user_gid: 10777
 splunk_admin_user: admin
+
+# Linux variables
 linux_packages:
   - vim
