@@ -1,3 +1,6 @@
 ---
-- name: Check ansible reachability
-  ansible.builtin.ping:
+- name: Ansible check
+  hosts: all
+  tasks:
+  - name: Check ansible reachability
+    ansible.builtin.ping:
