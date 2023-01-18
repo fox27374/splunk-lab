@@ -20,3 +20,6 @@ all:
     idx:
     # Indexer
       hosts:
+        spl-idx1.ntslab.loc:
+        spl-idx2.ntslab.loc:
+        spl-idx3.ntslab.loc:
