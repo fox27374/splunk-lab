@@ -1,0 +1,13 @@
+---
+- name: Update APT repositories
+  hosts: all
+  tasks:
+  - name: Update APT archives
+    ansible.builtin.apt:
+      update_cache: yes
+      upgrade: "yes"
+    become: yes
+  - name: Upgrade APT packages
+    ansible.builtin.apt:
+      upgrade: "yes"
+    become: yes
