@@ -26,7 +26,6 @@ all:
 
     other:
       hosts:
-        # Syslog, Loadbalancer
+        # Syslog, Loadbalancer, HFW
         spl-syslog.ntslab.loc:
-        # HFW
         spl-hfw.ntslab.loc:
