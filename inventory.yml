@@ -25,6 +25,8 @@ all:
         spl-idx3.ntslab.loc:
 
     other:
-    # Syslog, Loadbalancer
       hosts:
+        # Syslog, Loadbalancer
         spl-syslog.ntslab.loc:
+        # HFW
+        spl-hfw.ntslab.loc:
